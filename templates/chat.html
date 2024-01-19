@@ -1,15 +1,51 @@
-<!-- templates/chat.html -->
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Chat avec Flask</title>
-</head>
-<body>
-    <h1>Bienvenue sur le Chat!</h1>
-    <form action="/send" method="post">
-        <input type="text" name="message" placeholder="Tapez votre message ici...">
-        <input type="submit" value="Envoyer">
-    </form>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">d>
+
+<body class="bg-gray-900">
+    <div class="container mx-auto p-6">
+        <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg p-4">
+            <div class="text-white text-3xl font-semibold mb-6">Chat Interface</div>
+            <div class="text-gray-400 mb-2">Connect Instantly</div>
+            <div class="space-y-4">
+                <div class="bg-gray-700 p-3 rounded-md">
+                    <div class="text-blue-300 mb-2">User A: Hello there!</div>
+                    <div class="text-gray-300">You: Hi, how can I help you?</div>
+                </div>
+                <div class="bg-gray-700 p-3 rounded-md">
+                    <div class="text-blue-300 mb-2">User A: I'm interested in your services.</div>
+                    <div class="text-gray-300">You: Sure, what do you need?</div>
+                </div>
+                <div class="bg-gray-700 p-3 rounded-md">
+                    <div class="text-blue-300 mb-2">User A: Can you share more information?</div>
+                    <div class="text-gray-300">You: Absolutely, here's what we offer.</div>
+                </div>
+                <form id="messageForm" class="bg-blue-600 p-3 rounded-md" action="/send" method="post">
+                    <input type="text" name="message" placeholder="Type your message here..." class="bg-transparent outline-none w-full text-white placeholder-gray-300">
+                    <button type="submit" class="bg-blue-500 w-full p-3 mt-2 rounded-md text-white">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // You will need to implement what happens when the form is submitted.
+            // For example, you could send the information to your Flask backend using fetch API.
+            var message = document.getElementsByName('message')[0].value;
+            console.log('Message to send:', message);
+            // Reset the input field
+            document.getElementsByName('message')[0].value = '';
+        });
+    </script>
 </body>
+
 </html>
+
