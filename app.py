@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, url_for, redirect
 import Pyro4
 
 app = Flask(__name__)
-chat_server = Pyro4.Proxy("PYRO:obj_c957c682bfd4441c8cad30fa5bf45268@localhost:63633")
+chat_server = Pyro4.Proxy("PYRO:obj_7dbbe483ab5d49508a28247eb6693d44@localhost:51072")
 
 
 @app.route('/')

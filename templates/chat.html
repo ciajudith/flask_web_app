@@ -7,8 +7,7 @@
     <title>Chat Interface</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    d>
-
+</head>
 <body class="bg-gray-900">
 <div class="container mx-auto p-6">
     <div class="max-w-2xl mx-auto bg-gray-800 rounded-lg p-4">
@@ -33,7 +32,7 @@
 
 
             <form id="messageForm" class="bg-blue-600 p-3 rounded-md" action="/send" method="post">
-                <input type="text" name="message" placeholder="Type your message here..."
+                <input aria-label="" type="text" name="message" placeholder="Type your message here..."
                        class="bg-transparent outline-none w-full text-white placeholder-gray-300">
                 <button type="submit" class="bg-blue-500 w-full p-3 mt-2 rounded-md text-white">
                     Send
